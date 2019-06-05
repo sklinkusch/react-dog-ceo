@@ -13,8 +13,11 @@ const sagaMiddleware = createSagaMiddleware();
 // devtools middleware
 const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
+// middleware + devtools
+const composed = compose(applyMiddleware(sagaMiddleware), reduxDevTools);
+
 // create a Redux store using the reducer and connect the Saga middleware to the Redux store + DevTools
-export const store = createStore(reducer, compose(applyMiddleware(sagaMiddleware), reduxDevTools));
+export const store = createStore(reducer, composed);
 
 // run the watcher
 sagaMiddleware.run(watcherSaga);
