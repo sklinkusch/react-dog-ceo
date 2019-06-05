@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 // import the store
 import { store } from './store';
 // import App
-import './index.css';
+import './index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
